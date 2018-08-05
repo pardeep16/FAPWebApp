@@ -15,6 +15,7 @@
     </ul>
   </div>
 </nav> -->
+
  <div class="container" style="margin-top:20px;">
   <div class="col-sm-6 col-sm-offset-3">
 
@@ -27,6 +28,12 @@
 
     <!-- LOGIN FORM -->
     <form name="loginform" (ngSubmit)="login()" #validateUser="ngForm" novalidate>
+      <ngx-spinner
+      bdColor = "rgba(51, 51, 51, 0.8)"
+      size = "medium"
+      color = "#fcf7f7"
+      type = "ball-beat"
+      ></ngx-spinner>
       <div class="form-group">
         <label>Username</label>
         <input type="text" class="form-control" name="username" required minlength=6 [(ngModel)]="user.username" #username="ngModel">
@@ -68,7 +75,7 @@
             </button>
     </form>
     <br />
-    <div class="alert alert-danger" *ngIf="notValidUser" [(ngModel)]="notValidUser">
+    <div class="alert alert-danger" *ngIf="notValidUser">
       Please enter correct username and password.
     </div>
 
