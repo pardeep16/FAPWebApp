@@ -11,6 +11,8 @@ import { RegisterComponent } from './component/register/register.component';
 import { FapdashboardModule } from './modules/fapdashboard/fapdashboard.module';
 import { AppRouterModule } from './routes/app-router/app-router.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({

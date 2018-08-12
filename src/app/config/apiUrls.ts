@@ -1,7 +1,11 @@
 export class ApiUrls {
-  domainName:string="";
+  domainName:string="https://easyfeedback.herokuapp.com";
   loginUrl:string="";
+  loadDashboard="/courselist";
 
+constructor(){
+
+}
 
   getDomainUrl(){
     return this.domainName;
@@ -9,5 +13,9 @@ export class ApiUrls {
 
   getLoginUrl(){
     return this.loginUrl;
+  }
+
+  getLoadDashboard(){
+    return this.loadDashboard;
   }
 }
