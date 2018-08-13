@@ -6,6 +6,7 @@ import { LoginComponent } from '../../component/login/login.component';
 import { RegisterComponent } from '../../component/register/register.component';
 import { DashboardComponent } from '../../component/dashboard/dashboard.component';
 import { LogoutComponent } from '../../component/logout/logout.component';
+import { DataFeedbackComponent } from '../../component/data-feedback/data-feedback.component';
 
 const routes:Routes=[
   {
@@ -13,6 +14,9 @@ const routes:Routes=[
   },
   {
     "path":'session/logout',component:LogoutComponent,canActivate:[AuthguardService]
+  },
+  {
+    "path":'feedback/data',component:DataFeedbackComponent,canActivate:[AuthguardService]
   }
 ];
 

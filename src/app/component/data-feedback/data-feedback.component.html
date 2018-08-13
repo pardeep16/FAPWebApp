@@ -20,7 +20,7 @@
 </nav>
 
 <div class="container">
-  <h5 style="margin-top:10px;">Please select the Sprint for sharing your inputs</h5>
+  <h5 style="margin-top:10px;">Please select the Sprint for download the feedback data</h5>
   <br />
   <ngx-spinner
   bdColor = "rgba(51, 51, 51, 0.8)"
@@ -28,21 +28,18 @@
   color = "#fcf7f7"
   type = "ball-beat"
   ></ngx-spinner>
-  <form>
-<mat-form-field>
-  <mat-select placeholder="Select Sprint" [(ngModel)]="selectedSprint" (selectionChange)="changeSprint($event.value)" name="sprintselect">
-    <mat-option *ngFor="let sprint of sprints" [value]="sprint.id" >
-      {{sprint.val}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-  <mat-grid-list style="color:white;cursor: pointer;" cols="3" rowHeight="3:1">
-    <mat-grid-tile
-        *ngFor="let tile of sprints_cyc"
-        [style.background]="tile.color"
-        (click)="selectedItem(tile)">
-      {{tile.text}}
-    </mat-grid-tile>
-</mat-grid-list>
-  </form>
+  <mat-form-field>
+    <mat-select placeholder="Select Sprint" [(ngModel)]="selectedSprint" (selectionChange)="changeSprint($event.value)" name="sprintselect">
+      <mat-option *ngFor="let sprint of sprints" [value]="sprint.id" >
+        {{sprint.val}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    <button style="margin-left:20px;" name="fetchdata" type="submit" class="btn btn-primary" (click)="fetchfeedBackData($event)">Fetch Data</button>
+    <br />
+    <table [hidden]="isShowtableheader" class="table table-striped">
+      <thead>
+       <tr> <th>Phase</th> <th>Questions</th> <th>Planned Date</th> <th>Actual Date</th> <th>Questions</th> </tr>
+     </thead>
+    </table>
 </div>
