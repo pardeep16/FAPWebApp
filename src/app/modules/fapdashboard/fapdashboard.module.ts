@@ -14,6 +14,8 @@ import {MatGridListModule,MatSelectModule,MatOptionModule} from '@angular/materi
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LogoutComponent } from '../../component/logout/logout.component';
+import { DataFeedbackComponent } from '../../component/data-feedback/data-feedback.component';
+import { DatafetchfeedbackService } from '../../services/datafetchfeedback.service';
 
 @NgModule({
   imports: [
@@ -28,7 +30,7 @@ import { LogoutComponent } from '../../component/logout/logout.component';
     MatOptionModule,
     NgxSpinnerModule
   ],
-  declarations: [DashboardComponent, FeedbackDateComponent, FeedbackScreenComponent, LogoutComponent],
-  providers: [DashboardfetchService, FeedbackQuestionsService, AuthguardService]
+  declarations: [DashboardComponent, FeedbackDateComponent, FeedbackScreenComponent, LogoutComponent, DataFeedbackComponent],
+  providers: [DashboardfetchService, FeedbackQuestionsService, AuthguardService, DatafetchfeedbackService]
 })
 export class FapdashboardModule { }
