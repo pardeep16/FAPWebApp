@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import * as crypto from 'crypto-js';
 
 @Injectable()
 export class LoginService {
@@ -23,8 +24,10 @@ export class LoginService {
       //console.log(returdata);
     //  console.log(JSON.stringify(returdata));
       if(returdata && returdata.status){
-            //  console.log("set");
-               localStorage.setItem('currentUser',returdata);
+            //console.log(returdata);
+            //alert("hello");
+            var encryptData=crypto.AES.encrypt(JSON.stringify(returdata),'fapAppKey2018#');
+            localStorage.setItem('currentUser',encryptData);
        }
       return returdata;
     });
@@ -33,7 +36,7 @@ export class LoginService {
   }
 
   logOut(){
-    console.log("logout");
+    //console.log("logout");
     localStorage.removeItem('currentUser');
   }
 
