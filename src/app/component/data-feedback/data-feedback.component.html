@@ -36,6 +36,8 @@
     </mat-select>
   </mat-form-field>
     <button style="margin-left:20px;" name="fetchdata" type="submit" class="btn btn-primary" (click)="fetchfeedBackData($event)">Fetch Data</button>
+    <button style="margin-left:5px;" [disabled]="isexportbuttondisabled" name="fetchdata" type="export" class="btn btn-primary" (click)="exportAsExcel($event)">Export as xlsx</button>
+
     <br />
 
 
@@ -68,7 +70,7 @@
 </div> -->
 </div>
 
-<table [hidden]="isHidetableheader" style="white-space: nowrap;margin:30px;" class="table table-striped table-responsive">
+<table [hidden]="isHidetableheader" id="feedbacktable" style="white-space: nowrap;margin:30px;" class="table table-striped table-responsive">
   <thead>
    <tr> <th>Phase</th> <th>Questions</th> <th>Planned Date</th> <th>Actual Date</th> <th>Questions</th>
     <th *ngFor="let val of buildHeaderTable">
