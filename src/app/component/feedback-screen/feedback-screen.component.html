@@ -1,3 +1,26 @@
-<p>
-  feedback-screen works!
-</p>
+<nav class="navbar navbar-expand-sm navbar-dark" style="background: #30A9F4;">
+  <a class="navbar-brand" routerLink="/dashboard/v1">FAP</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#selectMenuOptions">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="selectMenuOptions">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" title="Download the feedback data" routerLink="/feedback/data">Download</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/session/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "medium"
+color = "#fcf7f7"
+type = "ball-beat"
+></ngx-spinner>

@@ -7,6 +7,7 @@ import { RegisterComponent } from '../../component/register/register.component';
 import { DashboardComponent } from '../../component/dashboard/dashboard.component';
 import { LogoutComponent } from '../../component/logout/logout.component';
 import { DataFeedbackComponent } from '../../component/data-feedback/data-feedback.component';
+import { FeedbackScreenComponent } from '../../component/feedback-screen/feedback-screen.component';
 
 const routes:Routes=[
   {
@@ -17,6 +18,9 @@ const routes:Routes=[
   },
   {
     "path":'feedback/data',component:DataFeedbackComponent,canActivate:[AuthguardService]
+  },
+  {
+    "path":'feedback/form/:sprint',component:FeedbackScreenComponent,canActivate:[AuthguardService]
   }
 ];
 

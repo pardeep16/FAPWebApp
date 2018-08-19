@@ -10,7 +10,7 @@ import { DashboardfetchService } from '../../services/dashboardfetch.service';
 import { FeedbackQuestionsService } from '../../services/feedback-questions.service';
 import { FapRouterModule } from '../../routes/fap-router/fap-router.module';
 import { AuthguardService } from '../../services/authguard.service';
-import {MatGridListModule,MatSelectModule,MatOptionModule,MatTableModule} from '@angular/material';
+import {MatGridListModule,MatSelectModule,MatOptionModule,MatTableModule,MatSnackBarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LogoutComponent } from '../../component/logout/logout.component';
@@ -29,7 +29,8 @@ import { DatafetchfeedbackService } from '../../services/datafetchfeedback.servi
     BrowserAnimationsModule,
     MatOptionModule,
     MatTableModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatSnackBarModule
   ],
   declarations: [DashboardComponent, FeedbackDateComponent, FeedbackScreenComponent, LogoutComponent, DataFeedbackComponent],
   providers: [DashboardfetchService, FeedbackQuestionsService, AuthguardService, DatafetchfeedbackService]
