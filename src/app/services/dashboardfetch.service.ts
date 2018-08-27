@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DashboardfetchService {
 
-  domainName:string="https://easyfeedback.herokuapp.com";
+  domainName:string="https://fap.techpryde.site";
   loadDashboard="/courselist";
 
   constructor(private http:HttpClient) { }

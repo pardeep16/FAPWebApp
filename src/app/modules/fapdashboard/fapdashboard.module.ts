@@ -10,12 +10,14 @@ import { DashboardfetchService } from '../../services/dashboardfetch.service';
 import { FeedbackQuestionsService } from '../../services/feedback-questions.service';
 import { FapRouterModule } from '../../routes/fap-router/fap-router.module';
 import { AuthguardService } from '../../services/authguard.service';
-import {MatGridListModule,MatSelectModule,MatOptionModule,MatTableModule,MatSnackBarModule} from '@angular/material';
+import {MatGridListModule,MatSelectModule,MatOptionModule,MatTableModule,MatSnackBarModule,MatDatepickerModule,MatNativeDateModule,MatInputModule,MatListModule } from '@angular/material';
+// import {MatDatepickerModule} from '@angular/material/datepicker';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LogoutComponent } from '../../component/logout/logout.component';
 import { DataFeedbackComponent } from '../../component/data-feedback/data-feedback.component';
 import { DatafetchfeedbackService } from '../../services/datafetchfeedback.service';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   imports: [
@@ -30,9 +32,13 @@ import { DatafetchfeedbackService } from '../../services/datafetchfeedback.servi
     MatOptionModule,
     MatTableModule,
     NgxSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatListModule
   ],
   declarations: [DashboardComponent, FeedbackDateComponent, FeedbackScreenComponent, LogoutComponent, DataFeedbackComponent],
-  providers: [DashboardfetchService, FeedbackQuestionsService, AuthguardService, DatafetchfeedbackService]
+  providers: [DashboardfetchService, FeedbackQuestionsService, AuthguardService, DatafetchfeedbackService,MatDatepickerModule,DatePipe]
 })
 export class FapdashboardModule { }

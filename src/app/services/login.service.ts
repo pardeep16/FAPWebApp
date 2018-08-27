@@ -6,7 +6,7 @@ import * as crypto from 'crypto-js';
 
 @Injectable()
 export class LoginService {
-  private domainUrl: string='https://easyfeedback.herokuapp.com';
+  private domainUrl: string='https://fap.techpryde.site';
 
   constructor(private http: HttpClient) { }
 
