@@ -11,11 +11,11 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class LoginComponent implements OnInit {
 
 
-  private username: string;
+  username: string;
   loading: boolean = false;
   returnUrl: string;
-  private notValidUser : boolean=false;
-  private spinnerImp:NgxSpinnerService;
+  notValidUser : boolean=false;
+  spinnerImp:NgxSpinnerService;
 
 user: any = {};
 

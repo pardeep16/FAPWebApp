@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import * as crypto from 'crypto-js';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DatafetchfeedbackService } from '../../services/datafetchfeedback.service';
 import * as XLSX from 'xlsx';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-data-feedback',
@@ -12,9 +14,10 @@ import * as XLSX from 'xlsx';
 
 
 export class DataFeedbackComponent implements OnInit {
-  private selectedSprint: number;
-  private isHidetableheader: boolean = true;
-  private isexportbuttondisabled: boolean = true;
+  selectedSprint: number;
+  isHidetableheader: boolean = true;
+  isexportbuttondisabled: boolean = true;
+  returnUrl: string;
 
   buildHeaderTable = null;
 
@@ -47,7 +50,7 @@ export class DataFeedbackComponent implements OnInit {
 
   //  formIdsDetails=[];
 
-  constructor(private spinner: NgxSpinnerService, private datafetchfeedback: DatafetchfeedbackService) { }
+  constructor(private spinner: NgxSpinnerService, private datafetchfeedback: DatafetchfeedbackService,private router:Router,private matSnackBar:MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -234,6 +237,11 @@ export class DataFeedbackComponent implements OnInit {
     var workbook = XLSX.utils.table_to_book(document.getElementById('feedbacktable'));
     XLSX.writeFile(workbook, 'feedback-data'+date.getTime()+'.xlsx');
     this.spinner.hide();
+  }
+
+  navigatetoDashboard(event){
+    this.returnUrl='/dashboard/v1';
+      this.router.navigate([this.returnUrl],{replaceUrl:true});
   }
 
 }

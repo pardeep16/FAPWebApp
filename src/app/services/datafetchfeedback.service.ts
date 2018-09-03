@@ -8,7 +8,7 @@ export class DatafetchfeedbackService {
 
   constructor(private http:HttpClient) { }
 
-  domainName:string="https://easyfeedback.herokuapp.com";
+  domainName:string="https://fap.techpryde.site";
   fetchfeedbackdata="/api/v1/data/feedback";
 
   fetchData(user,sprint){
